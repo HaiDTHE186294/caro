@@ -41,4 +41,8 @@ public class Board {
             System.out.println();
         }
     }
+
+    public boolean isCellEmpty(int row, int col) {
+        return grid[row][col].getState() == CellState.EMPTY;
+    }
 }
