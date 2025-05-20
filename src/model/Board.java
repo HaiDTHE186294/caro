@@ -32,13 +32,17 @@ public class Board {
         return size;
     }
 
-    public void display() {
-        // Simple console-based board rendering
-        for (Cell[] row : grid) {
-            for (Cell cell : row) {
-                System.out.print(cell.getState().getChar() + " ");
-            }
-            System.out.println();
-        }
+//    public void display() {
+//        // Simple console-based board rendering
+//        for (Cell[] row : grid) {
+//            for (Cell cell : row) {
+//                System.out.print(cell.getState().getChar() + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
+
+    public boolean isCellEmpty(int row, int col) {
+        return grid[row][col].getState() == CellState.EMPTY;
     }
 }

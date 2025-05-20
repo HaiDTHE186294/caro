@@ -3,17 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Caro/src/model/AIPlayer.java</file>
-            <file>file:/E:/Caro/src/model/Move.java</file>
-            <file>file:/E:/Caro/src/rule/RuleChecker.java</file>
-            <file>file:/E:/Caro/src/model/Board.java</file>
-            <file>file:/E:/Caro/src/controller/GameController.java</file>
-            <file>file:/E:/Caro/src/model/CellState.java</file>
-            <file>file:/E:/Caro/src/model/HumanPlayer.java</file>
-            <file>file:/E:/Caro/src/ui/ConsoleUI.java</file>
-            <file>file:/E:/Caro/src/controller/Main.java</file>
-            <file>file:/E:/Caro/src/model/Player.java</file>
-            <file>file:/E:/Caro/src/model/Cell.java</file>
+            <file>file:/E:/caro/src/model/Move.java</file>
+            <file>file:/E:/caro/src/model/Board.java</file>
+            <file>file:/E:/caro/src/rule/RuleChecker.java</file>
+            <file>file:/E:/caro/src/model/HumanPlayer.java</file>
+            <file>file:/E:/caro/src/ui/BoardPanel.java</file>
+            <file>file:/E:/caro/src/model/Player.java</file>
+            <file>file:/E:/caro/src/model/CellState.java</file>
+            <file>file:/E:/caro/src/model/Cell.java</file>
+            <file>file:/E:/caro/src/controller/GameController.java</file>
         </group>
     </open-files>
 </project-private>
