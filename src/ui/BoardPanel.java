@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import model.Board;
-import model.Move;
-import model.Player;
+import model.CellState;
 import controller.GameController;
 
 public class BoardPanel extends JPanel {
@@ -35,27 +34,27 @@ public class BoardPanel extends JPanel {
         int size = board.getSize();
 
         // Vẽ lưới bàn cờ
+        g.setColor(Color.BLACK);
         for (int i = 0; i <= size; i++) {
-            g.drawLine(i * CELL_SIZE, 0, i * CELL_SIZE, size * CELL_SIZE); // dọc
-            g.drawLine(0, i * CELL_SIZE, size * CELL_SIZE, i * CELL_SIZE); // ngang
+            g.drawLine(i * CELL_SIZE, 0, i * CELL_SIZE, size * CELL_SIZE);
+            g.drawLine(0, i * CELL_SIZE, size * CELL_SIZE, i * CELL_SIZE);
         }
 
-        // Vẽ các dấu X, O
+        // Vẽ ký hiệu từ mỗi CellState
         for (int r = 0; r < size; r++) {
             for (int c = 0; c < size; c++) {
-                char ch = board.getCell(r, c).getState().getChar();
-                if (ch != '\0') {
-                    if (ch == 'X') {
-                        g.setColor(Color.RED);
-                        g.drawLine(c * CELL_SIZE + 5, r * CELL_SIZE + 5,
-                                   (c+1) * CELL_SIZE - 5, (r+1) * CELL_SIZE - 5);
-                        g.drawLine((c+1) * CELL_SIZE - 5, r * CELL_SIZE + 5,
-                                   c * CELL_SIZE + 5, (r+1) * CELL_SIZE - 5);
-                    } else if (ch == 'O') {
-                        g.setColor(Color.BLUE);
-                        g.drawOval(c * CELL_SIZE + 5, r * CELL_SIZE + 5,
-                                   CELL_SIZE - 10, CELL_SIZE - 10);
-                    }
+                CellState state = board.getCell(r, c).getState();
+                char symbol = state.getChar();
+
+                if (!state.isEmpty()) {
+                    FontMetrics fm = g.getFontMetrics();
+                    int textWidth = fm.charWidth(symbol);
+                    int textHeight = fm.getAscent();
+
+                    int x = c * CELL_SIZE + (CELL_SIZE - textWidth) / 2;
+                    int y = r * CELL_SIZE + (CELL_SIZE + textHeight) / 2 - 4;
+
+                    g.drawString(String.valueOf(symbol), x, y);
                 }
             }
         }

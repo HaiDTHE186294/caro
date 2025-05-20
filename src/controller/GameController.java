@@ -15,7 +15,7 @@ public class GameController {
     private boolean gameOver = false;
 
     public void startGame() {
-        board = new Board(15);
+        board = new Board(5);
         players = new Player[] {
             new HumanPlayer("Player 1", 'X'),
             new HumanPlayer("Player 2", 'O')
